@@ -11,11 +11,11 @@ import robocode.BulletHitEvent;
  * 
  */
 
-public class MiRobot extends Robot {
+public class RobotZuzunaga extends Robot {
 
 	public void run() {
 
-		while (true) { 
+		while (true) {
 
 			// Desplaza el robot 100 pixels hacia adelante
 			//ahead(100);
@@ -44,31 +44,28 @@ public class MiRobot extends Robot {
 			// Escanear otros robots
 			//scan();
 			
-			ahead(40);
+			ahead(80);
 			turnGunRight(360);
 			fire(Rules.MAX_BULLET_POWER);
-			ahead(40);
+			ahead(80);
 			turnGunLeft(360);
 			fire(Rules.MAX_BULLET_POWER);
 			turnLeft(80);
-			turnRadarLeft(15);
-			turnRadarRight(15);
-			
+			turnRadarLeft(15);	
 			scan();
 		}
+		
 	}
 
 	public void onScannedRobot(ScannedRobotEvent event) {
 
 		// Al escanear un robot
-		if (event.getDistance() < 200) {
+		if (event.getDistance() < 100) {
 			// Disparar
-			//fire(10);
-			fire(9);
+			fire(10);
 		} else {
 			// Disparar
-			//fire(5);
-			fire(0);
+			fire(5);
 		}
 	}
 	
